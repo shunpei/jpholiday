@@ -38,7 +38,7 @@ type Holidays struct {
 }
 
 func Get() *Holidays {
-	raw, err := ioutil.ReadFile("./holidays.json")
+	raw, err := ioutil.ReadFile(os.Getenv("GOPATH") + "/src/github.com/shunpei/jpholiday/holidays.json")
 	if err != nil {
 		fmt.Println(err.Error())
 		os.Exit(1)
